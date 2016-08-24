@@ -85,18 +85,47 @@ class ColorSpec: public ISpecification<Product>
         }
 };
 
+class ColorSizeSpec: public ISpecification<Product>
+{
+    Color _color;
+    Size _size;
+
+    public:
+    ColorSizeSpec(Color color, Size size)
+        : _color(color), _size(size)
+    {}
+
+    virtual bool is_satisfied(const Product& p) {
+        if(_color == p.getColor() && _size == p.getSize())
+            return true;
+        return false;
+    }
+};
+
+
 int main()
 {
     Product apple("Apple", Red, Large);
     Product banana("Banana", Yellow, Medium);
     Product cherry("Cherry", Red, Large);
+    Product pear("Pear", Yellow, Medium);
 
-    vector<Product> fruits {apple, banana, cherry};
+    vector<Product> fruits {apple, banana, cherry, pear};
+
+    Filter f;
 
     ColorSpec c(Red);
-    Filter f;
     vector<Product> red = f.filter(fruits, c);
     for(auto i: red)
         cout << i.getName() << endl;
    
+    cout << "----------------------" << endl;
+
+    ColorSizeSpec cs(Yellow, Medium);
+    vector<Product> ym = f.filter(fruits, cs);
+    for(auto i: ym)
+        cout << i.getName() << endl;
+   
+
+
 }

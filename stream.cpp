@@ -1,3 +1,6 @@
+// Demonstrates overloading of the indirection operator for reading 
+// from and writing to stdin, stdout.
+
 #include <iostream>
 
 using namespace std;

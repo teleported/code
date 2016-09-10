@@ -9,16 +9,19 @@ int main()
     int status = 0;
     p = fork();
 
-    if(-1 == p) 
+    if(-1 == p) {
         printf("I am the parent. Fork was unsuccessful.\n");
+    }
     else if(0 == p) {
         printf("I am the child. My pid is %d. My parent's pid is %d.\n", getpid(), getppid());
         sleep(1);
-        exit(-10);
+        exit(10); // WEXITSTATUS interpretes it as unsigned. So if -ve value is returned, wrong exit status code is derived.
     } else {
-           printf("I am the parent. My pid is %d. Child pid is %d\n", getpid(), p);
-           // TODO: status is not getting the expected value
-           wait(&status);
-           printf("Child exited with exit code %d.\n", WEXITSTATUS(status)); 
+        printf("I am the parent. My pid is %d. Child pid is %d\n", getpid(), p);
+        wait(&status);
+        if(WIFEXITED(status) != 0)
+            printf("Child process exited with exit code %d.\n", WEXITSTATUS(status)); 
+        else
+            printf("Child process exited normally.\n");
     }
 }

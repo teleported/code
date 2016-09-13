@@ -10,5 +10,6 @@ all:
 	gcc -o pthread -pthread pthread.c
 	gcc -o pthread_mutex -pthread pthread_mutex.c
 	gcc -o pthread_mutex2 -pthread pthread_mutex2.c
+	gcc -o pthread_cond -pthread pthread_cond.c
 clean:
-	rm -rf vfork environ execve execve_script fork process script_invoked file_desc message.txt a.out pthread pthread_mutex pthread_mutex2
+	rm -rf vfork environ execve execve_script fork process script_invoked file_desc message.txt a.out pthread pthread_mutex pthread_mutex2 pthread_cond

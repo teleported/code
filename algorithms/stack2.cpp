@@ -11,18 +11,20 @@ class Stack
         T*  buf;
         int size;
         int buf_size;
+        int array_access;
 
         void resize(size_t newsize) {
-            cout << "Resizing to " << newsize << endl;
 
             T* newbuf = new T[newsize];
 
-            for(int i = 0; i < size; ++i)
+            for(int i = 0; i < size; ++i) {
                 newbuf[i] = buf[i];
+                array_access++;
+            }
 
             delete[] buf;
             buf = newbuf;
-            buf_size = newsize;
+            //buf_size = newsize;
         }
 
     public:
@@ -30,10 +32,12 @@ class Stack
             buf = new int[1];
             size = 0;
             buf_size = 1;
+            array_access = 0;
         }
 
         ~Stack() {
             delete[] buf;
+            cout << "Array access = " << array_access << endl;
         }
 
         bool isEmpty() {
@@ -46,11 +50,13 @@ class Stack
 
             size++;
             buf[size-1]= item;
+            array_access++;
         }
 
         T pop() {
             if(size > 0) {
                 T item = buf[size-1];
+                array_access++;
                 size--;
                 
                 if(size < buf_size/4)

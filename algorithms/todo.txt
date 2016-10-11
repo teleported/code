@@ -1,0 +1,8 @@
+1. Infix, prefix, postfix operations
+2. Iterator
+3. Diakstra's infix equation solving with two stacks
+4. Shuffle Sort
+5. Graham Scan
+
+
+Assertions in C++

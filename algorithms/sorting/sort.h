@@ -9,7 +9,14 @@ template <typename T>
 class Sort
 {
     public:
-        virtual void sort(typename std::vector<T>::iterator start, typename std::vector<T>::iterator end) = 0;
+        virtual void sort(typename std::vector<T>::iterator start, typename std::vector<T>::iterator end)
+        {
+            throw "Not implemented";
+        }
+        virtual void sort(std::vector<T>& v)
+        {
+            throw "Not implemented";
+        }
 
         virtual ~Sort() {}
 

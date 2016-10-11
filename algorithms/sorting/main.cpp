@@ -2,9 +2,12 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <ctime>
 
 #include "sort.h"
 #include "insertion.h"
+#include "selection.h"
+#include "shell.h"
 
 using namespace std;
 
@@ -50,11 +53,12 @@ bool validate(vector<string>::iterator start, vector<string>::iterator end) {
 int main()
 {
     vector<string> v;
-    populate_lite(v);
+    populate_words(v, false);
+    //populate_lite(v);
 
-    InsertionSort<string> i;
+    ShellSort<string> i;
     i.sort(v.begin(), v.end());
     cout << "Sorted? " << std::boolalpha << i.validate(v.begin(), v.end()) << endl;
-    i.print(v.begin(), v.end());
+    //i.print(v.begin(), v.end());
 
 }

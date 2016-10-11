@@ -1,3 +1,14 @@
+/*
+ * Best:    O(n)
+ * Worst:   O(n^2)
+ * Average: O(kn), where k is the max distance between an element and it's actual place
+ *
+ * Online:  Yes
+ * In Place:Yes
+ * Adaprive:Yes
+ * Stable:  Yes
+ */
+
 #ifndef __INSERTION_H_
 #define __INSERTION_H_
 
@@ -21,6 +32,8 @@ class InsertionSort : public Sort<T>
                 while(j != start) {
                     if(this->less(*j, *(j-1)))
                         this->swap(*j, *(j-1));
+                    else 
+                        break;
                     j--;
                 }
                 i++;

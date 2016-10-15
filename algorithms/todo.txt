@@ -3,6 +3,7 @@
 3. Diakstra's infix equation solving with two stacks
 4. Shuffle Sort
 5. Graham Scan
-
+6. Bottom up Merge Sort
+7. Bubble sort
 
 Assertions in C++

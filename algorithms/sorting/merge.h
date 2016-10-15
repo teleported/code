@@ -3,6 +3,8 @@
  * Worst:   
  * Average: 
  *
+ * Recursive algorithm
+ * Divide and Conquer
  * Takes at most NlogN compares and 6NlogN array acesses
  * Online:  No
  * In Place:No

@@ -6,7 +6,7 @@
  * Online:  Yes
  * In Place:Yes
  * Adaprive:Yes
- * Stable:  Yes
+ * Stable:  No
  */
 
 #ifndef __SHELL_H_

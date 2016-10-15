@@ -3,9 +3,10 @@
  * Worst:   
  * Average: 
  *
- * Online:  Yes
- * In Place:Yes
- * Adaprive:Yes
+ * Takes at most NlogN compares and 6NlogN array acesses
+ * Online:  No
+ * In Place:No
+ * Adaptive:Yes
  * Stable:  Yes
  */
 

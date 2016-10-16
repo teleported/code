@@ -10,6 +10,7 @@
 #include "shell.h"
 #include "merge.h"
 #include "utility.h"
+#include "quick.h"
 
 using namespace std;
 
@@ -69,7 +70,6 @@ int main()
     end_time = clock();
     cout << "Sorted? " << std::boolalpha << se.validate(v.begin(), v.end()) << endl;
     cout << "Time taken (ms): " << diffclock_ms(begin_time, end_time) << endl;
-*/
 
     ShellSort<string> s;
     begin_time = clock();
@@ -85,5 +85,13 @@ int main()
     cout << "Sorted? " << std::boolalpha << m.validate(v.begin(), v.end()) << endl;
     cout << "Time taken (ms): " << diffclock_ms(begin_time, end_time) << endl;
     //i.print(v.begin(), v.end());
+*/
+    QuickSort<string> q;
+    begin_time = clock();
+    q.sort(v);
+    end_time = clock();
+    cout << "Sorted? " << std::boolalpha << q.validate(v.begin(), v.end()) << endl;
+    cout << "Time taken (ms): " << diffclock_ms(begin_time, end_time) << endl;
+
 
 }
